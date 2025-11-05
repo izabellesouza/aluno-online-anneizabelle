@@ -1,4 +1,4 @@
-# 📚 Projeto Aluno Online (Classe Aluno + Professor)
+# 💻 API REST com CRUD para Alunos e Professores (Spring Boot + PostgreSQL)
 
 Este projeto foi desenvolvido por **Anne Izabelle**, como parte da **Primeira Avaliação da disciplina de Tecnologia para Back-End**.
 
