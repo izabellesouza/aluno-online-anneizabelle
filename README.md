@@ -172,8 +172,7 @@ Testar no **Insomnia** ✅
 - ✅ CRUD completo de Aluno e Professor
 - ✅ Banco criado e populado
 - ✅ Prints anexados
-- ✅ Testado no Insomnia
-- ✅ Projeto pronto para entrega acadêmica
+- ✅ Todas as funcionalidades implementadas e testadas com sucesso
 
 ---
 
