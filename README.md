@@ -132,15 +132,30 @@ api
 ```bash
 git clone https://github.com/izabellesouza/aluno-online-anneizabelle.git
 ```
+---
+## ⚙️ Configuração do Banco (`application.properties`)
 
-Configurar banco no `application.properties`:
+> ⚠️ *Por segurança, usuário e senha do banco **não** são exibidos. Substitua com os seus valores locais.*
 
 ```properties
+spring.application.name=Aluno Online
 spring.datasource.url=jdbc:postgresql://localhost:5432/aluno_online
-spring.datasource.username=postgres
-spring.datasource.password=admin
+spring.datasource.username=SEU_USUARIO
+spring.datasource.password=SUA_SENHA
+
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.show-sql=true
+
+spring.datasource.testWhileIdle=true 
+spring.datasource.validationQuery=SELECT 1
+
 spring.jpa.hibernate.ddl-auto=update
+
+spring.jpa.hibernate.naming.implicit-strategy=org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyHbmImpl
+spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
 ```
+---
 
 Rodar o projeto:
 
