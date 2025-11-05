@@ -1,121 +1,167 @@
-# 🎓 Projeto Aluno Online
+# 📚 Projeto Aluno Online (Classe Aluno + Professor)
 
 Este projeto foi desenvolvido por **Anne Izabelle**, como parte da **Primeira Avaliação da disciplina de Tecnologia para Back-End**.
 
-O objetivo foi criar uma **API REST** simples para o gerenciamento de alunos, permitindo **cadastrar, listar todos e buscar por ID**, utilizando **Java com Spring Boot**, integração com banco de dados **PostgreSQL** (acessado via **DBeaver**) e testes realizados no **Insomnia**.
+Foram implementadas APIs REST completas para **Alunos** e **Professores**, permitindo:
+
+- ✅ Criar
+- ✅ Listar todos
+- ✅ Buscar por ID
+- ✅ Atualizar
+- ✅ Deletar
+
+Utilizando **Java com Spring Boot**, **PostgreSQL**, **DBeaver** e testes no **Insomnia**.
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-- **Java 17**
-- **Spring Boot**
-- **Maven**
-- **PostgreSQL**
-- **DBeaver**
-- **Insomnia**
+- Java 17
+- Spring Boot
+- Maven
+- PostgreSQL
+- DBeaver
+- Insomnia
 
 ---
 
-## 🧠 Endpoints da API
+## 🧠 Endpoints — Alunos
 
 | Método | Rota | Descrição |
-|:------:|:-----|:----------|
-| `POST` | `/alunos` | Cadastra um novo aluno |
-| `GET`  | `/alunos` | Retorna todos os alunos cadastrados |
-| `GET`  | `/alunos/{id}` | Busca um aluno específico pelo ID |
+|---|---|---|
+| `POST` | `/alunos` | Cadastrar aluno |
+| `GET` | `/alunos` | Listar todos os alunos |
+| `GET` | `/alunos/{id}` | Buscar aluno por ID |
+| `PUT` | `/alunos/{id}` | Atualizar aluno |
+| `DELETE` | `/alunos/{id}` | Deletar aluno |
 
-Esses endpoints foram implementados na classe `AlunoController.java`, com apoio das camadas `Service` e `Repository`.
+### 🧪 Testes no Insomnia — Aluno
+
+#### ✅ Criar aluno — `POST /alunos`
+![POST Aluno](./api/src/imagens/insomnia_post.png)
+
+#### ✅ Listar alunos — `GET /alunos`
+![GET Alunos](./api/src/imagens/insomnia_get_all.png)
+
+#### ✅ Buscar aluno por ID — `GET /alunos/{id}`
+![GET Aluno por ID](./api/src/imagens/insomnia_get_id.png)
+
+#### ✅ Atualizar aluno — `PUT /alunos/{id}`
+![PUT Aluno](./api/src/imagens/insomnia_put.png)
+
+#### ✅ Deletar aluno — `DELETE /alunos/{id}`
+![DELETE Aluno](./api/src/imagens/insomnia_delete.png)
 
 ---
 
-## 💾 Banco de Dados
+## 👨‍🏫 Endpoints — Professores
 
-Banco criado e gerenciado no **DBeaver**, em **PostgreSQL**, com o nome **`aluno_online`**.
+| Método | Rota | Descrição |
+|---|---|---|
+| `POST` | `/professores` | Cadastrar professor |
+| `GET` | `/professores` | Listar todos os professores |
+| `GET` | `/professores/{id}` | Buscar professor por ID |
+| `PUT` | `/professores/{id}` | Atualizar professor |
+| `DELETE` | `/professores/{id}` | Deletar professor |
 
-**Tabela principal (`alunos`):**
+### 🧪 Testes no Insomnia — Professor
+
+#### ✅ Criar professor — `POST /professores`
+![POST Professor](./api/src/imagens/insomnia_prof_post.png)
+
+#### ✅ Listar professores — `GET /professores`
+![GET Professores](./api/src/imagens/insomnia_prof_get_all.png)
+
+#### ✅ Buscar professor por ID — `GET /professores/{id}`
+![GET Professor por ID](./api/src/imagens/insomnia_prof_get_id.png)
+
+#### ✅ Atualizar professor — `PUT /professores/{id}`
+![PUT Professor](./api/src/imagens/insomnia_prof_put.png)
+
+#### ✅ Deletar professor — `DELETE /professores/{id}`
+![DELETE Professor](./api/src/imagens/insomnia_prof_delete.png)
+
+---
+
+## 🗄 Banco de Dados
+
+Banco gerenciado pelo **DBeaver**, PostgreSQL.
+
+### 📌 TABELA `alunos`
 
 | Campo | Tipo | Descrição |
-|:------|:-----|:----------|
-| `id`    | `serial`        | Identificador único do aluno |
-| `nome`  | `varchar(255)`  | Nome completo do aluno |
-| `email` | `varchar(255)`  | E-mail do aluno |
-| `curso` | `varchar(255)`  | Curso em que o aluno está matriculado |
+|---|---|---|
+| `id` | serial | ID do aluno |
+| `nomeCompleto` | varchar(255) | Nome |
+| `email` | varchar(255) | Email |
+| `cpf` | varchar(255) | CPF |
 
-**Print da tabela no DBeaver (com dados inseridos):**
+### 📌 TABELA `professor`
 
-![Banco de Dados - DBeaver](./api/src/imagens/dbeaver_tabela.png)
+| Campo | Tipo | Descrição |
+|---|---|---|
+| `id` | serial | ID do professor |
+| `nomeCompleto` | varchar(255) | Nome |
+| `email` | varchar(255) | Email |
+| `cpf` | varchar(255) | CPF |
 
----
-
-## 📬 Testes das Requisições (Insomnia)
-
-### 1) Cadastrar aluno — `POST /alunos`
-![POST - Criar aluno](./api/src/imagens/insomnia_post.png)
-
-### 2) Listar todos — `GET /alunos`
-![GET - Buscar todos os alunos](./api/src/imagens/insomnia_get_all.png)
-
-### 3) Buscar por ID — `GET /alunos/{id}`
-![GET - Buscar aluno por ID](./api/src/imagens/insomnia_get_id.png)
-
+### 🖼 Print — DBeaver com tabelas
+![DBeaver](./api/src/imagens/tabelaAluno.png)
+![DBeaver](./api/src/imagens/tabelaProfessor.png)
 ---
 
 ## 📁 Estrutura do Projeto
 
-Estrutura principal do código-fonte:
-
 ```
-📦 api
- ┣ 📂 src
- ┃ ┣ 📂 main
- ┃ ┃ ┣ 📂 java/br/com/alunoonline/api
- ┃ ┃ ┃ ┣ 📂 controller → AlunoController.java
- ┃ ┃ ┃ ┣ 📂 model → Aluno.java
- ┃ ┃ ┃ ┣ 📂 repository → AlunoRepository.java
- ┃ ┃ ┃ ┗ 📂 service → AlunoService.java
- ┃ ┃ ┗ 📂 resources → application.properties
- ┃ ┣ 📂 imagens → prints do DBeaver e Insomnia
- ┗ 📄 pom.xml
+api
+ └── src
+     ├── main
+     │   ├── java/br/com/alunoonline/api
+     │   │   ├── controller
+     │   │   ├── model
+     │   │   ├── repository
+     │   │   └── service
+     │   └── resources
+     └── imagens  → prints do Insomnia e DBeaver
 ```
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Como Executar
 
-1. Clone este repositório:
-```
+```bash
 git clone https://github.com/izabellesouza/aluno-online-anneizabelle.git
 ```
 
-2. Abra o projeto no **IntelliJ IDEA**.
+Configurar banco no `application.properties`:
 
-3. Configure o PostgreSQL conforme `application.properties`:
-```
+```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/aluno_online
 spring.datasource.username=postgres
 spring.datasource.password=admin
 spring.jpa.hibernate.ddl-auto=update
 ```
 
-4. Execute o projeto:
-```
+Rodar o projeto:
+
+```bash
 mvn spring-boot:run
 ```
 
-5. Teste as rotas no **Insomnia**.
+Testar no **Insomnia** ✅
 
 ---
 
-## 🧾 Observações
+## 📌 Observações
 
-- O repositório contém as rotas `POST`, `GET` e `GET por ID`;
-- O banco foi criado e populado; os prints estão neste README;
-- As requisições foram testadas e documentadas;
-- Projeto pronto para a **entrevista técnica (14/10)**.
+- ✅ CRUD completo de Aluno e Professor
+- ✅ Banco criado e populado
+- ✅ Prints anexados
+- ✅ Testado no Insomnia
+- ✅ Projeto pronto para entrega acadêmica
 
 ---
 
 🧡 Desenvolvido por **Anne Izabelle**  
 📚 Disciplina: *Tecnologia para Back-End*  
-👨‍🏫 Professor: *Kelson Almeida*.
+👨‍🏫 Professor: *Kelson Almeida*

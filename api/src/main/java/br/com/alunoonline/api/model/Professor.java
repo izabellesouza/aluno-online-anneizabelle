@@ -1,52 +1,27 @@
 package br.com.alunoonline.api.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Table(name = "professor")
+@Entity
 public class Professor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "nome_completo")
     private String nomeCompleto;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "cpf")
     private String cpf;
-
-    public Professor() {}
-
-    public Professor(String nomeCompleto, String email, String cpf) {
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
-        this.cpf = cpf;
-    }
-
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNomeCompleto() {
-        return nomeCompleto;
-    }
-    public void setNomeCompleto(String nomeCompleto) {
-        this.nomeCompleto = nomeCompleto;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
 }
