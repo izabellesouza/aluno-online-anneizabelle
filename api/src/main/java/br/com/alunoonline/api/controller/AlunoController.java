@@ -50,4 +50,16 @@ public class AlunoController {
         //O nome da injecao de dependencia é AlunoService
         return alunoService.buscarAlunoPorId(id);
     }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deletarAlunoPorId(@PathVariable Long id) {
+        alunoService.deletarAlunoPorId(id);
+
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void atualizarAluno(@PathVariable Long id, @RequestBody Aluno alunoAtualizado) {
+        alunoService.atualizarAlunoPorId(id, alunoAtualizado);
+    }
 }
