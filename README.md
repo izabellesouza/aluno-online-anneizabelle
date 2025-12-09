@@ -149,7 +149,6 @@ Base: `/matriculas`
 
 ### 🧪 Testes no Insomnia — Matrícula de Aluno
 
-> Ajuste os nomes dos arquivos abaixo conforme os prints que você salvou.
 
 #### ✅ Criar matrícula — `POST /matriculas`
 ![POST Matrícula](./api/src/imagens/insomnia_matricula_post.png)
