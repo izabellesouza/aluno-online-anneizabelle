@@ -119,7 +119,6 @@ Base: `/disciplinas`
 
 ### 🧪 Testes no Insomnia — Disciplina
 
-> Ajuste os nomes dos arquivos abaixo conforme os prints que você salvou.
 
 #### ✅ Criar disciplina — `POST /disciplinas`
 ![POST Disciplina](./api/src/imagens/insomnia_disciplina_post.png)
